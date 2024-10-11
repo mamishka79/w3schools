@@ -22,16 +22,17 @@
         .top-nav {
             background-color: #333;
             overflow: hidden;
-            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
         .top-nav a {
-            float: left;
             color: white;
-            text-align: center;
-            padding: 12px;
             text-decoration: none;
-            font-size: 17px;
+            padding: 8px 16px;
+            font-size: 16px;
         }
 
         .top-nav a:hover {
@@ -44,31 +45,39 @@
             color: white;
         }
 
+        .top-nav .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-nav .nav-right a {
+            margin-left: 10px;
+        }
+
         .search-container {
-            float: right;
-            padding-right: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .search-container input[type=text] {
             padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
         .search-container button {
-            float: right;
             padding: 6px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ddd;
-            font-size: 17px;
+            margin-left: 5px;
+            background: #4CAF50;
+            color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
         }
 
         .search-container button:hover {
-            background: #ccc;
+            background: #45a049;
         }
 
         nav {
@@ -158,24 +167,31 @@
     </header>
     
     <div class="top-nav">
-        <a href="#">HTML</a>
-        <a href="#" class="active">CSS</a>
-        <a href="#">JavaScript</a>
-        <a href="#">SQL</a>
-        <a href="#">Python</a>
-        <a href="#">Java</a>
-        <a href="#">PHP</a>
-        <a href="#">W3.CSS</a>
-        <a href="#">C</a>
-        <a href="#">C++</a>
-        <a href="#">C#</a>
-        <a href="#">Bootstrap</a>
-        <a href="#">React</a>
-        <a href="#">MySQL</a>
-        <a href="#">jQuery</a>
-        <div class="search-container">
-            <input type="text" placeholder="Search...">
-            <button type="submit">🔍</button>
+        <div class="nav-left">
+            <a href="#" class="active">CSS</a>
+            <a href="#">HTML</a>
+            <a href="#">JavaScript</a>
+            <a href="#">SQL</a>
+            <a href="#">Python</a>
+            <a href="#">Java</a>
+            <a href="#">PHP</a>
+            <a href="#">W3.CSS</a>
+            <a href="#">C</a>
+            <a href="#">C++</a>
+            <a href="#">C#</a>
+            <a href="#">Bootstrap</a>
+            <a href="#">React</a>
+            <a href="#">MySQL</a>
+            <a href="#">jQuery</a>
+        </div>
+        <div class="nav-right">
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button type="submit">🔍</button>
+            </div>
+            <a href="#">Get Certified</a>
+            <a href="#">Sign Up</a>
+            <a href="#">Log in</a>
         </div>
     </div>
 
