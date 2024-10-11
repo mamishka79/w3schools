@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Syntax - Personal Use</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        #chatbot-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        #chatbot-messages {
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+        #chatbot-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-container">
+        <h1>CSS Syntax</h1>
+        <p>CSS is a language that describes the style of an HTML document. CSS describes how HTML elements should be displayed.</p>
+        <h2>CSS Syntax</h2>
+        <p>A CSS rule consists of a selector and a declaration block:</p>
+        <img src="https://www.w3schools.com/css/img_selector.gif" alt="CSS Syntax">
+        <p>The selector points to the HTML element you want to style.</p>
+        <p>The declaration block contains one or more declarations separated by semicolons.</p>
+        <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>
+        <p>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
+    </div>
+
+    <button class="chatbot-button" onclick="toggleChatbot()">Chat</button>
+    <div id="chatbot-window">
+        <div id="chatbot-header">ChatGPT Assistant</div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbot-window');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value;
+            if (message.trim() === '') return;
+
+            const messagesContainer = document.getElementById('chatbot-messages');
+            const userMessage = document.createElement('div');
+            userMessage.textContent = 'You: ' + message;
+            messagesContainer.appendChild(userMessage);
+
+            // Here you would add the logic to send the message to ChatGPT API
+            // For now, just simulating a response
+            const botMessage = document.createElement('div');
+            botMessage.textContent = 'ChatGPT: ' + 'This is a simulated response.';
+            messagesContainer.appendChild(botMessage);
+
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
