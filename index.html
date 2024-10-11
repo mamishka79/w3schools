@@ -3,177 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Syntax - Personal Use</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+    <title>Learn Web Development - MyWebSchool</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-        .w3-bar {
+        
+        header {
             background-color: #333;
-            overflow: hidden;
-        }
-        .w3-bar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .w3-bar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            overflow-x: hidden;
-            padding-top: 20px;
-        }
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #f2f2f2;
-            display: block;
-        }
-        .sidebar a:hover {
-            background-color: #575757;
             color: white;
+            padding: 20px;
+            text-align: center;
         }
-        .content {
-            margin-left: 270px;
+
+        nav {
+            display: flex;
+            background-color: #444;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            background-color: #666;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 20px;
         }
-        .chatbot-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        #chatbot-window {
-            display: none;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            height: 400px;
+        
+        .section {
             background-color: white;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            z-index: 1000;
-        }
-        #chatbot-header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
             text-align: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        #chatbot-messages {
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
             padding: 10px;
-            height: 300px;
-            overflow-y: auto;
-        }
-        #chatbot-input {
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            padding: 10px;
-            border: none;
-            border-top: 1px solid #ddd;
-            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-    <div class="w3-bar">
+    <header>
+        <h1>MyWebSchool - Learn Web Development</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Home</a>
         <a href="#">HTML</a>
         <a href="#">CSS</a>
-        <a href="#">JAVASCRIPT</a>
-        <a href="#">SQL</a>
-        <a href="#">PYTHON</a>
-        <a href="#">JAVA</a>
-        <a href="#">PHP</a>
-        <a href="#">HOW TO</a>
-        <a href="#">W3.CSS</a>
-        <a href="#">BOOTSTRAP</a>
-        <a href="#">REACT</a>
-        <a href="#">MYSQL</a>
-        <a href="#">JQUERY</a>
-    </div>
-    <div class="sidebar">
-        <a href="#">CSS Introduction</a>
-        <a href="#">CSS Syntax</a>
-        <a href="#">CSS Selectors</a>
-        <a href="#">CSS Colors</a>
-        <a href="#">CSS Backgrounds</a>
-        <a href="#">CSS Borders</a>
-        <a href="#">CSS Margins</a>
-        <a href="#">CSS Padding</a>
-        <a href="#">CSS Height/Width</a>
-    </div>
-    <div class="content">
-        <div class="w3-container">
-            <h1>CSS Syntax</h1>
-            <p>CSS is a language that describes the style of an HTML document. CSS describes how HTML elements should be displayed.</p>
-            <h2>CSS Syntax</h2>
-            <p>A CSS rule consists of a selector and a declaration block:</p>
-            <img src="https://www.w3schools.com/css/img_selector.gif" alt="CSS Syntax">
-            <p>The selector points to the HTML element you want to style.</p>
-            <p>The declaration block contains one or more declarations separated by semicolons.</p>
-            <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>
-            <p>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
+        <a href="#">JavaScript</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+    <div class="main-content">
+        <div class="section">
+            <h2>HTML Tutorial</h2>
+            <p>Learn the basics of HTML to create amazing websites.</p>
+            <button onclick="alert('Start learning HTML!')">Start Learning</button>
+        </div>
+        <div class="section">
+            <h2>CSS Tutorial</h2>
+            <p>Style your pages with CSS to make them look beautiful.</p>
+            <button onclick="alert('Start learning CSS!')">Start Learning</button>
+        </div>
+        <div class="section">
+            <h2>JavaScript Tutorial</h2>
+            <p>Learn JavaScript to add interactivity to your website.</p>
+            <button onclick="alert('Start learning JavaScript!')">Start Learning</button>
         </div>
     </div>
-
-    <button class="chatbot-button" onclick="toggleChatbot()">Chat</button>
-    <div id="chatbot-window">
-        <div id="chatbot-header">ChatGPT Assistant</div>
-        <div id="chatbot-messages"></div>
-        <input type="text" id="chatbot-input" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
-    </div>
-
-    <script>
-        function toggleChatbot() {
-            const chatbotWindow = document.getElementById('chatbot-window');
-            chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatbot-input');
-            const message = input.value;
-            if (message.trim() === '') return;
-
-            const messagesContainer = document.getElementById('chatbot-messages');
-            const userMessage = document.createElement('div');
-            userMessage.textContent = 'You: ' + message;
-            messagesContainer.appendChild(userMessage);
-
-            // Here you would add the logic to send the message to ChatGPT API
-            // For now, just simulating a response
-            const botMessage = document.createElement('div');
-            botMessage.textContent = 'ChatGPT: ' + 'This is a simulated response.';
-            messagesContainer.appendChild(botMessage);
-
-            input.value = '';
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-    </script>
+    
+    <footer>
+        <p>MyWebSchool &copy; 2024 - All Rights Reserved</p>
+    </footer>
 </body>
 </html>
