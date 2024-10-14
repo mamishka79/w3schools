@@ -12,7 +12,7 @@
             background-size: 100% auto;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
-            min-height: 300vh; /* Extend the height to create more scrollable content */
+            min-height: 300vh;
         }
         html, body {
             height: 100%;
@@ -24,12 +24,12 @@
 <body>
     <div id="chat-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: rgba(0, 0, 0, 0.8); color: white; padding: 10px; overflow-y: auto;">
         <div id="chat-box" style="height: 300px; overflow-y: scroll;"></div>
-        <input id="user-input" type="text" style="width: 80%;" placeholder="Type your message...">
+        <input id="user-input" type="text" style="width: 80%;" placeholder="Type...">
         <button onclick="sendMessage()">Send</button>
     </div>
 
     <script>
-        const apiKey = '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';
+        const apiKey = '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';
         const chatBox = document.getElementById('chat-box');
 
         async function sendMessage() {
@@ -41,13 +41,10 @@
 
             try {
                 const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        { role: "user", content: userInput }
-                    ]
+                    model: "gpt-4",
+                    messages: [{ role: "user", content: userInput }]
                 }, {
                     headers: {
-                        'Content-Type': 'application/json',
                         'Authorization': `Bearer ${apiKey}`
                     }
                 });
@@ -55,7 +52,7 @@
                 const botResponse = response.data.choices[0].message.content.trim();
                 appendMessage('ChatGPT: ' + botResponse);
             } catch (error) {
-                appendMessage('Error: Unable to get response');
+                appendMessage('Error: No response');
                 console.error(error);
             }
         }
