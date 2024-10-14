@@ -32,31 +32,32 @@
         const apiKey = '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';
         const chatBox = document.getElementById('chat-box');
 
-        function sendMessage() {
+        async function sendMessage() {
             const userInput = document.getElementById('user-input').value;
             if (!userInput) return;
 
             appendMessage('You: ' + userInput);
             document.getElementById('user-input').value = '';
 
-            axios.post('https://api.openai.com/v1/completions', {
-                model: "text-davinci-003",
-                prompt: userInput,
-                max_tokens: 150
-            }, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                }
-            })
-            .then(response => {
-                const botResponse = response.data.choices[0].text.trim();
+            try {
+                const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        { role: "user", content: userInput }
+                    ]
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+
+                const botResponse = response.data.choices[0].message.content.trim();
                 appendMessage('ChatGPT: ' + botResponse);
-            })
-            .catch(error => {
+            } catch (error) {
                 appendMessage('Error: Unable to get response');
                 console.error(error);
-            });
+            }
         }
 
         function appendMessage(message) {
